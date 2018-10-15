@@ -20,7 +20,6 @@ const int N = 10;
 const int it = 100000;
 const int start = 10000;
 double alpha = 0.4;
-double d = 0.314;
 void Initial(double **matr)
 {
   int i;
