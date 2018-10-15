@@ -1,1 +1,2 @@
-# area_fractal_my_model_c-
+# area_fractal_my_model_c++
+# Программа вычисляет размер поглощающей области в нашей системе
