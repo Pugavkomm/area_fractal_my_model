@@ -13,8 +13,8 @@
 #include <string>
 using namespace std;
 const double Pi = atan(1.0)*4;
-const int quant_step = 200; // quant_step diff. initial
-const int quant_step_d = 100;
+const int quant_step = 100; // quant_step diff. initial
+const int quant_step_d = 1000;
 const double step_d = .0001;
 const int N = 10;
 const int it = 100000;
@@ -34,7 +34,6 @@ void Initial(double **matr)
   {
     matr[i][0] = (double)(rand()%1400000 + 1)/1000000.0;
   }
-  //matr[4][0] = .023;
 }
 
 
@@ -61,12 +60,17 @@ int main(int argc, char const *argv[]) {
   for (int count = 0; count < N; count++) {
       matrix[count] = new double[it];
   }
-  double max_mass[N], min_mass[N], max_mass_back[N] = {0.0}, min_mass_back[N] = {0.0};
+  double max_mass[N], min_mass[N], max_mass_back[N], min_mass_back[N];
   double area;
   double d;
   double d1 = (1.0 - alpha)/(1 + cos(Pi/(N + 1)));
   for (int j = 0; j < quant_step_d; j++)
   {
+    for (int i = 0; i < N; i++)
+    {
+      max_mass_back[i] = -100.0;
+      min_mass_back[i] = 100.0;
+    }
     d = d1 + step_d * (j - 1);
     for (int i = 0; i < quant_step; i++)
     {
