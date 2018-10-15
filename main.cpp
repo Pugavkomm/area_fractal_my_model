@@ -1,4 +1,4 @@
-//version beta 0.1
+//version 1.0
 //author Pugavkomm
 //numeric area fractl my system.
 //https://github.com/Pugavkomm/area_fractal_my_model_c-.git
